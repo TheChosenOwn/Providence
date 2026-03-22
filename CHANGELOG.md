@@ -2,109 +2,141 @@
 
 All notable changes to **Providence** will be documented in this file.
 
-The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
+---
+
+## [0.3.0] - Initial Release
+
+### ✨ Core Features
+
+#### Multi-Account System
+- Add unlimited Discord accounts with token authentication
+- Account groups: Main, Raid, Spam, Alt with color-coded badges
+- Connect/disconnect accounts individually or all at once
+- Primary account designation for priority operations
+- Account-specific task execution
+- Persistent account storage across sessions
+
+#### Modern GUI Interface
+- Beautiful dark theme with animated background glow effects
+- Custom frameless titlebar with minimize, maximize, close buttons
+- Dashboard with real-time statistics (accounts, active tasks, messages, uptime)
+- Live activity log with color-coded event types
+- Sidebar navigation with quick account switching
+- Smooth page transitions and hover animations
+
+### 🔌 Plugin System
+- Load custom plugins from `plugins/` folder
+- Plugins can extend functionality with custom commands
+- Enable/disable plugins without restart
+- Plugin API with access to Discord client
+- Built-in plugin template and documentation
+
+### 📜 Custom Command Scripting
+- Create automation scripts with JavaScript
+- Built-in script editor with syntax highlighting
+- Run scripts from GUI or via `!runscript` chat command
+- Access to Discord client, account, and logging functions
+- Share and import scripts easily
+
+### 🌍 Multiple Language Support
+- Interface translation system
+- English included by default
+- Load custom languages from `languages/` folder
+- Easy language switching in settings
+- Create and share language packs
+
+### 🎨 Custom Themes/Skins
+- CSS variable-based theming system
+- Built-in dark theme
+- Visual theme editor with color pickers
+- Preview themes before applying
+- Export/import theme JSON files
+- Customize: background, accent, text, success, warning, error colors
+
+### ⚡ Chat Commands (Remote Control)
+- Control bot via Discord messages
+- Configurable command prefix (default: `!`)
+- Permission system with allowed user IDs
+- Help command with usage information
+
+#### Available Chat Commands
+| Command | Description |
+|---------|-------------|
+| `!ping` | Check bot latency |
+| `!spam` | Start message spam |
+| `!stopspam` | Stop spamming |
+| `!kill` | Target user with spam |
+| `!stopkill` | Stop kill |
+| `!ladder` | Ladder pattern spam |
+| `!blaze` | Play audio in VC |
+| `!stopblaze` | Stop audio |
+| `!runscript` | Run custom script |
+| `!autoreply` | Set auto-reply |
+| `!avatar` | Get user avatar |
+| `!stream` | Set streaming status |
+| `!help` | Show commands |
+
+### 🔥 Spam & Kill Features
+- **Fast Spam** - Rapid message spamming with adjustable speed (400-5000ms)
+- **Kill** - Target specific users with wordlist + mention spam
+- **Ladder Spam** - Sequential wordlist messages with counters
+- **Ladder Spam 2** - Alternative wordlist option
+- **Random Send** - Random words from configured wordlist
+- **Slow/Fast Send** - Timed message sending options
+
+### 🎵 VC Blazing
+- Play audio in voice channels with DAVE E2EE support
+- Custom MP3 file support
+- Default audio file fallback
+- Adjustable volume (14.4x boost)
+- Auto-loop playback
+- Connection state handling (disconnect/reconnect)
+
+### 🛡️ Automation Features
+- **Auto-Reply** - Automatically reply to specific users
+- **Auto-React** - React to user's messages with emoji
+- **Anti Group-DM** - Automatically leave group DMs
+
+### 📊 Utility Features
+- Delete own messages in bulk
+- Get user avatar URLs
+- User overview with account details
+- Mass DM all friends
+- Set streaming status with custom text
+
+### ⚙️ Settings & Configuration
+- Wordlist 1 for Kill/Random/Ladder commands
+- Wordlist 2 for Ladder2 command
+- Load wordlists from `.txt` files
+- Chat commands enable/disable toggle
+- Command prefix configuration
+- Allowed users whitelist
+
+### 🔧 Technical Features
+- Built with Electron 28
+- discord.js-selfbot-v13 for Discord API
+- @discordjs/voice for voice support
+- @snazzah/davey for DAVE protocol
+- ffmpeg-static for audio processing
+- Auto-updating FFMPEG path for packaged builds
+
+```
+
 
 ---
 
-## [0.3.0] - Latest Release
+## Roadmap
 
-### ✨ Added
-- **DAVE Protocol Support** for voice channel blazing
-  - End-to-end encrypted voice connections
-  - Improved voice connection reliability
-- **Permission System** for chat commands
-  - Configurable allowed user IDs
-  - Empty = everyone can use commands
-  - Per-command permission checks
+### Coming Soon
+- Proxy support per account
+- Message queue system
+- Export/import accounts
+- Auto-reconnect on disconnect
 
-### 🔧 Changed
-- Simplified DAVE implementation approach
-- Improved voice connection stability
-- Better account reconnection handling
-
-### 🐛 Fixed
-- **"File is not defined" error** - Fixed initialization order
-- Voice connection stability issues
-- Account reconnection handling
-
----
-
-## [0.2.0]
-
-### ✨ Added
-- **Multi-Account System** - Complete rewrite
-  - Account groups: Main, Raid, Spam, Alt
-  - Add/remove accounts dynamically
-  - Connect/disconnect individual accounts
-  - Connect/disconnect all accounts
-  - Primary account system
-  - Account-specific task execution
-- **GUI Commands Page** - New command center
-  - Expandable command cards
-  - Input fields for parameters
-  - Speed/intensity sliders
-  - Account selector dropdown
-  - Stop buttons for each command
-- **Chat Commands** - Remote control via Discord
-  - Configurable prefix (default: `!`)
-  - Enable/disable toggle in settings
-  - Commands: ping, spam, kill, ladder, blaze, autoreply, avatar, stream, help
-- **Live Activity Log** in Dashboard
-  - Real-time event logging
-  - Account name labels
-  - Event type tags (OK, INFO, WARN, ERR)
-  - Auto-scroll with 100 entry limit
-
-### 🎨 UI Improvements
-- Animated background glow effects
-- Custom titlebar with window controls (minimize, maximize, close)
-- Improved account cards with group badges
-- Stat cards on dashboard (Accounts, Active, Messages, Uptime)
-- Quick account switch in sidebar
-- Connection status indicator
-
----
-
-## [0.1.0]
-
-### ✨ Added
-- **Initial Release** of Providence
-- Basic Discord selfbot functionality
-- Single account support
-- Modern GUI with dark theme
-- Basic commands:
-  - Spam commands
-  - Kill command
-  - VC Blazing (basic)
-  - Auto-reply
-- Dashboard with connection status
-- Settings page with wordlist configuration
-
----
-
-## 📊 Version Overview
-
-| Version | Major Features | Status |
-|---------|---------------|--------|
-| 0.3.0 | DAVE Protocol, Permissions | **Current** |
-| 0.2.0 | Multi-account, GUI Commands, Chat Commands | Deprecated (never realesed) |
-| 0.1.0 | Initial release | Deprecated (never realesed) |
-
----
-
-## 🔮 Roadmap
-
-### Planned for 0.4.0
-- [ ] Custom themes/skins
-- [ ] Proxy support per account
-- [ ] Message queue system
-- [ ] Export/import accounts
-- [ ] Auto-reconnect on disconnect
-
-### Planned for 0.5.0
-- [ ] Plugin system
-- [ ] Custom command scripting
-- [ ] Multiple language support
+### Future Considerations
+- Linux/macOS support
+- Cloud sync for settings
+- More automation features
 
 ---
 
