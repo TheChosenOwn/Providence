@@ -36,6 +36,7 @@
 
 ### 💻 Modern GUI Interface
 - Beautiful dark theme with animated background glows
+- **Custom themes/skins** - Personalize your interface
 - Custom titlebar with window controls
 - Real-time activity log panel
 - Dashboard with statistics (accounts, tasks, messages, uptime)
@@ -45,17 +46,41 @@
 - Configurable prefix (default: `!`)
 - Permission system with allowed user IDs
 
+### 🔌 Plugin System
+- Extend functionality with custom plugins
+- Easy plugin installation and management
+- Create your own plugins with the plugin API
+- Plugins can add custom chat commands
+
+### 📜 Custom Command Scripting
+- Write your own automation scripts
+- JavaScript-based scripting system
+- Run scripts from GUI or via chat command
+- Share scripts with the community
+
+### 🌍 Multiple Language Support
+- Interface available in multiple languages
+- Easy language switching in settings
+- Create and share language packs
+
+### 🎨 Custom Themes/Skins
+- Built-in dark theme
+- Create custom color schemes
+- Color picker for all UI elements
+- Export and share themes
+
 ### 🔥 Spam & Kill Features
 - **Fast Spam** - Rapid message spamming
 - **Kill** - Target specific users in channels
 - **Ladder Spam** - Ascending/descending number patterns
 - **Random Send** - Random word messages from wordlist
 
-### 🎵 VC Blazing (DAVE Support HIGHLY UNSTABLE AND MIGHT NOT WORK)
+### 🎵 VC Blazing (DAVE Support)
 - Play audio in voice channels
 - DAVE protocol support for E2EE voice
 - Custom MP3 file support
 - Auto-join voice channels
+- Loop audio playback
 
 ### 🛡️ Automation
 - **Auto-Reply** - Automatically reply to specific users
@@ -67,6 +92,7 @@
 - Get user avatars
 - User overview/stats
 - Mass DM friends
+- Set streaming status
 
 ---
 
@@ -74,27 +100,27 @@
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
-│  ⬡ PROVIDENCE                              v0.3.0 DAVE  ○ ○ │
+│  ⬡ PROVIDENCE                              v0.3.0       ○ ○ │
 ├────────────┬────────────────────────────────────────────────┤
 │            │  Dashboard                          🔌 ⛔     │
 │  ⬡ Dashboard│─────────────────────────────────────────────│
 │  👥 Accounts│  ┌─────┐ ┌─────┐ ┌─────┐ ┌─────┐            │
 │  ⌘ Commands │  │Accs │ │Active│ │Msgs │ │Time │            │
-│  ⚙ Settings │  │  3  │ │  2  │ │ 156 │ │01:23│            │
-│            │  └─────┘ └─────┘ └─────┘ └─────┘            │
-│ Quick Switch│                                                │
-│  ● Main    │  ┌──────────────────────────────────────────┐ │
-│  ○ Raid1   │  │ 👤 MyMain#1234          🔵 MAIN     🟢  │ │
-│  ○ SpamBot │  │ ─────────────────────────────────────── │ │
-│            │  │ [Disconnect] [Remove] [Primary]          │ │
-│            │  └──────────────────────────────────────────┘ │
-│────────────│                                                │
-│ 3 accounts │  ┌──────────────────────────────────────────┐ │
-│ ● Connected│  │ Live Log                          All Accs│ │
-└────────────┬─│ 12:34:56 [Main] OK Connected             │ │
-             │  │ 12:35:01 [Raid1] WARN Task started      │ │
-             │  └──────────────────────────────────────────┘ │
-             └────────────────────────────────────────────────┘
+│  🔌 Plugins │  │  3  │ │  2  │ │ 156 │ │01:23│            │
+│  📜 Scripts │  └─────┘ └─────┘ └─────┘ └─────┘            │
+│  🎨 Themes  │                                                │
+│  ⚙ Settings │  ┌──────────────────────────────────────────┐ │
+│            │  │ 👤 MyMain#1234          🔵 MAIN     🟢  │ │
+│ Quick Switch│  │ ─────────────────────────────────────── │ │
+│  ● Main    │  │ [Disconnect] [Remove] [Primary]          │ │
+│  ○ Raid1   │  └──────────────────────────────────────────┘ │
+│            │                                                │
+│────────────│  ┌──────────────────────────────────────────┐ │
+│ 3 accounts │  │ Live Log                          All Accs│ │
+│ ● Connected│  │ 12:34:56 [Main] OK Connected             │ │
+└────────────┴─│ 12:35:01 [Raid1] WARN Task started      │ │
+               └──────────────────────────────────────────┘ │
+               └────────────────────────────────────────────────┘
 ```
 
 ---
@@ -103,7 +129,6 @@
 
 ### Requirements
 - **Windows 10/11** (64-bit)
-- installation needed - portable .exe
 
 ### Get the Latest Release
 
@@ -156,6 +181,7 @@ Enable chat commands in Settings to allow control via Discord messages:
 | `!ladder <channelId> [userId]` | Ladder spam |
 | `!blaze <vcId> [mp3]` | Play audio in VC |
 | `!stopblaze` | Stop audio |
+| `!runscript <name>` | Run a custom script |
 | `!autoreply <userId> <msg>` | Auto-reply to user |
 | `!avatar <userId>` | Get user avatar |
 | `!stream <status>` | Set streaming status |
@@ -163,7 +189,7 @@ Enable chat commands in Settings to allow control via Discord messages:
 
 ---
 
-## 📋 Commands
+## 📋 GUI Commands
 
 ### Utility Commands
 | Command | Description | Arguments |
@@ -218,6 +244,28 @@ Load wordlists from `.txt` files or paste directly.
 | Command Prefix | Prefix for chat commands | `!` |
 | Allowed User IDs | Users who can use commands (empty = everyone) | Empty |
 
+### Themes
+
+Customize your interface in the **Themes** page:
+- Choose from built-in themes
+- Create custom color schemes with color pickers
+- Preview themes before applying
+- Export/import theme files
+
+### Plugins
+
+Extend functionality in the **Plugins** page:
+- Install plugins from `.js` files
+- Enable/disable installed plugins
+- Create your own plugins
+
+### Scripts
+
+Create automation scripts in the **Scripts** page:
+- Built-in script editor
+- Run scripts from GUI or chat
+- Access Discord client in scripts
+
 ---
 
 ## ⚠️ Disclaimer
@@ -249,7 +297,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 **[⬆ Back to Top](#-providence)**
 
-Made with 💜 by [TheChosenOwn]
+Made with 💜 by TheChosenOwn
 
 *Star ⭐ this repo if you find it useful!*
 
