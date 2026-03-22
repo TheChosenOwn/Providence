@@ -120,7 +120,7 @@ All notable changes to **Providence** will be documented in this file.
 - ffmpeg-static for audio processing
 - Auto-updating FFMPEG path for packaged builds
 
-```
+
 
 
 ---
